@@ -1,7 +1,20 @@
 {
-    "name": "your-name-here/DataDiet",
+    "name": "lsenft/data_diet",
     "description": "DataDiet plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp"
+    ],
+    "homepage": "https://github.com/lsenft/cakephp_exception_notifier",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levi Senft",
+            "email": "lsenft@gmail.com",
+            "homepage": "http://www.levisenft.com",
+            "role": "Internets Tamer"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.3.2 <4.0.0"
