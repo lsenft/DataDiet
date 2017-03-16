@@ -1,5 +1,5 @@
 <?php
-namespace DataDiet\Model\Behavior;
+namespace Lsenft\DataDiet\Model\Behavior;
 
 use Cake\ORM\Behavior;
 
