@@ -45,8 +45,8 @@ class LoggedInUserListener implements EventListenerInterface {
  * @return void
  */
     public function beforeSave(Event $event, EntityInterface $entity, ArrayObject $options) {
-        if (empty($options['auth'])) {
-            $options['auth'] = $this->_Auth->user();
+        if (empty($options['diet_auth'])) {
+            $options['diet_auth'] = $this->_Auth->user();
         }
     }
 }
