@@ -49,4 +49,10 @@ class LoggedInUserListener implements EventListenerInterface {
             $options['diet_auth'] = $this->_Auth->user();
         }
     }
+    
+    public function beforeFind(Event $event, Query $query, \ArrayObject $options, $primary) {
+        if (empty($options['diet_auth'])) {
+            $options['diet_auth'] = $this->_Auth->user();
+        }
+    }
 }
