@@ -30,24 +30,11 @@ class LoggedInUserListener implements EventListenerInterface {
  */
     public function implementedEvents() {
         return [
-                'Model.beforeSave' => [
-                        'callable' => 'beforeSave',
+                'Model.beforeFind' => [
+                        'callable' => 'beforeFind',
                         'priority' => -100
                 ]
         ];
-    }
-/**
- * Before save listener.
- *
- * @param \Cake\Event\Event $event The beforeSave event that was fired
- * @param \Cake\Datasource\EntityInterface $entity The entity that is going to be saved
- * @param \ArrayObject $options the options passed to the save method
- * @return void
- */
-    public function beforeSave(Event $event, EntityInterface $entity, ArrayObject $options) {
-        if (empty($options['diet_auth'])) {
-            $options['diet_auth'] = $this->_Auth->user();
-        }
     }
     
     public function beforeFind(Event $event, Query $query, \ArrayObject $options, $primary) {
