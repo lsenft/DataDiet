@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DataDiet\\": "src"
+            "Lsenft\\DataDiet\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DataDiet\\Test\\": "tests",
+            "Lsenft\\DataDiet\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
