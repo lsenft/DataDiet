@@ -15,9 +15,10 @@ class DietableBehavior extends Behavior
     }
     
     //public function beforeFind(Event $event, Query $query, ArrayObject $options, boolean $primary) {
-    public function beforeFind(Event $event, Query $query, \ArrayObject $options, boolean $primary)
+    public function beforeFind(Event $event, Query $query, \ArrayObject $options, $primary)
     {
         var_dump($options);
        // die();
+        
     }
 }
