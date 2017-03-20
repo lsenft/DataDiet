@@ -3,6 +3,7 @@ namespace Lsenft\DataDiet\Model\Behavior;
 
 use Cake\ORM\Behavior;
 use Cake\ORM\Query;
+use Cake\Event\Event;
 
 class DietableBehavior extends Behavior
 {
