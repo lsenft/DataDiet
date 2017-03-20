@@ -19,8 +19,10 @@ class DietableBehavior extends Behavior
     //public function beforeFind(Event $event, Query $query, ArrayObject $options, boolean $primary) {
     public function beforeFind(Event $event, Query $query, \ArrayObject $options, $primary)
     {
+        var_dump($options);
         // if !empty(my group ) {
         var_dump($this->config);
+        
          // array merge $options $this->config[mygroup]
          // // bind user id and group vars
        // }
