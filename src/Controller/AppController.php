@@ -1,6 +1,6 @@
 <?php
 
-namespace DataDiet\Controller;
+namespace Lsenft\DataDiet\Controller;
 
 use App\Controller\AppController as BaseController;
 
