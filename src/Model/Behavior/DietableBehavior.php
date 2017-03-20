@@ -19,10 +19,15 @@ class DietableBehavior extends Behavior
     //public function beforeFind(Event $event, Query $query, ArrayObject $options, boolean $primary) {
     public function beforeFind(Event $event, Query $query, \ArrayObject $options, $primary)
     {
-        var_dump($options['diet_auth']);
-        // if !empty(my group ) {
-        var_dump($this->config);
-        
+        // Authenticated user group_id exists
+        if (empty($options['diet_auth']['group_id'])) {
+            return;
+        }
+                
+        // Does a rule exist for this group
+        if (!empty($this->config[(string)$options['diet_auth']['group_id']])) {
+            var_dump($this->config[(string)$options['diet_auth']['group_id']]);
+        }
          // array merge $options $this->config[mygroup]
          // // bind user id and group vars
        // }
