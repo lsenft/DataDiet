@@ -6,6 +6,8 @@ use Cake\Controller\Component\AuthComponent;
 use Cake\Datasource\EntityInterface;
 use Cake\Event\Event;
 use Cake\Event\EventListenerInterface;
+use Cake\ORM\Query;
+
 /**
  * Class LoggedInUserListener
  *
