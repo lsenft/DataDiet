@@ -5,6 +5,7 @@ use Cake\ORM\Behavior;
 use Cake\ORM\Query;
 use Cake\Event\Event;
 use ArrayObject;
+use Cake\Utility\Hash;
 
 class DietableBehavior extends Behavior
 {
