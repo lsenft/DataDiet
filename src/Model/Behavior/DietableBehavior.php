@@ -6,6 +6,7 @@ use Cake\ORM\Query;
 use Cake\Event\Event;
 use ArrayObject;
 use Cake\Utility\Hash;
+use Cake\Utility\Inflector;
 
 class DietableBehavior extends Behavior
 {
@@ -30,11 +31,19 @@ class DietableBehavior extends Behavior
             return;
         }
         
-        $options = Hash::merge($options, $this->config[(string)$options['diet_auth']['group_id']]);
-        $query->bind('userId', $options['diet_auth']['group_id'])->bind('groupId', $options['diet_auth']['group_id']);
-         // array merge $options $this->config[mygroup]
-         // // bind user id and group vars
-       // }
+        $modelOptions = $this->config[(string)$options['diet_auth']['group_id']];
         
+       
+         
+        
+        // Apply he options from the model to fields made available by auth.
+        $query->applyOptions($modelOptions['query']);
+        
+         if (!empty($modelOptions['bindings'])) {
+            foreach($modelOptions['bindings'] as $binding) {
+                $fieldName = Inflector::underscore(preg_replace('/:dd/', '', $binding));
+                $query->bind($binding, $options['diet_auth'][$fieldName]);
+            }
+        }
     }
 }
