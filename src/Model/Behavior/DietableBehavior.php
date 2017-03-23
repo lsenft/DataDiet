@@ -26,7 +26,7 @@ class DietableBehavior extends Behavior
     public function beforeFind(Event $event, Query $query, ArrayObject $options, $primary)
     {
         // Authenticated user group_id exists
-        if (empty($this->auth)) {
+        if (empty($this->auth) || empty($this->auth['Group']['identifier'])) {
             return;
         }
                         
